@@ -71,13 +71,13 @@ query Hello {
 ### Project Structure 🧱
 
 ```bash
-.
 ├── src/
-│   ├── handler.js          # Main Lambda function
-│   ├── schema.js           # GraphQL schema definition
-│   └── resolvers.js        # Resolvers for GraphQL queries
-├── docker-compose.yml      # LocalStack configuration
-├── serverless.yml          # Serverless Framework configuration
-├── package.json            # Project dependencies and scripts
-└── README.md               # Project documentation
+│   ├─ handler.js         # Main lambda function
+│   ├── graphql/
+│   │    ├── schema.js    # GraphQL schema definition
+│   │    └── resolvers.js # Resolvers for GraphQL queries
+├── docker-compose.yml    # LocalStack configuration
+├── serverless.yml        # Serverless Framework configuration
+├── package.json          # Project dependencies and scripts
+└── README.md             # Project documentation
 ```
