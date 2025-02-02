@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@apollo/server": "^4.11.3",
+    "@as-integrations/aws-lambda": "^3.1.0",
+    "graphql": "^16.10.0"
+  },
+  "name": "@anopszetex/graphql-aws",
+  "description": "Template simples que demonstra como configurar um servidor GraphQL usando Apollo Server e implantá-lo em uma função AWS Lambda",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "sls invoke local -f graphql --path src/mocks/query.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

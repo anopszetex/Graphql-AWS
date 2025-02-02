@@ -1,13 +1,14 @@
 service: graphql-aws
-frameworkVersion: '3'
+frameworkVersion: "3"
 
 provider:
   name: aws
   runtime: nodejs18.x
-
+  httpApi:
+    cors: true
 functions:
-  api:
-    handler: index.handler
+  graphql:
+    handler: src/index.graphqlHandler
     events:
       - httpApi:
           path: /
