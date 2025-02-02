@@ -1,6 +1,6 @@
 # Graphql-AWS
 
-Simple Template with Apollo Server**_(v4)_** and AWS Lambda
+Simple Template with Apollo Server **_(v4)_** and AWS Lambda
 
 ## Prerequisites 👨‍💻
 
