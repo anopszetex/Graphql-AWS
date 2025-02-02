@@ -76,8 +76,11 @@ query Hello {
 │   ├── mocks/
 │   │    ├── query.json   # Mock http request locally
 │   ├── graphql/
-│   │    ├── schema.js    # GraphQL schema definition
-│   │    └── resolvers.js # Resolvers for GraphQL queries
+│           ├── hero/               # Hero-related GraphQL files
+│           │     ├── index.js      # Merges schemas and resolvers for Hero
+│           │     ├── resolvers.js  # Resolvers for Hero queries/mutations
+│           │     └── schema.js     # GraphQL schema definition for Hero
+│           ├── index.js            # Merges all schemas and resolvers
 ├── docker-compose.yml    # LocalStack configuration
 ├── serverless.yml        # Serverless Framework configuration
 ├── package.json          # Project dependencies and scripts
