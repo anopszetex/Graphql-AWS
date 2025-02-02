@@ -12,4 +12,7 @@ functions:
     events:
       - httpApi:
           path: /
-          method: get
+          method: POST
+      - httpApi:
+          path: /
+          method: GET
