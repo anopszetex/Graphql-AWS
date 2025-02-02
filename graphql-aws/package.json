@@ -2,17 +2,25 @@
   "dependencies": {
     "@apollo/server": "^4.11.3",
     "@as-integrations/aws-lambda": "^3.1.0",
-    "graphql": "^16.10.0"
+    "@graphql-tools/merge": "^9.0.17",
+    "@graphql-tools/schema": "^10.0.16",
+    "graphql": "^16.10.0",
+    "graphql-tag": "^2.12.6"
   },
   "name": "@anopszetex/graphql-aws",
   "description": "Template simples que demonstra como configurar um servidor GraphQL usando Apollo Server e implantá-lo em uma função AWS Lambda",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
+    "dev": "IS_LOCAL=true npx nodemon --exec sls offline start --host 0.0.0.0",
     "test": "sls invoke local -f graphql --path src/mocks/query.json"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "serverless": "^4.5.3",
+    "serverless-offline": "^14.4.0"
+  }
 }
