@@ -1,3 +1,10 @@
+Pré-requisitos
+Node.js (v18 ou superior)
+
+Yarn ou npm instalado
+
+Docker e Docker Compose instalados
+
 ## Configuração do LocalStack
 
 Este projeto usa o [LocalStack](https://localstack.cloud/) para simular serviços AWS localmente. Para rodar o LocalStack, siga os passos abaixo:
