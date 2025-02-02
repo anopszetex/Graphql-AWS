@@ -50,6 +50,8 @@ query Hello {
 }
 ```
 
+### Project Structure 🧱
+
 ```bash
 .
 ├── src/
