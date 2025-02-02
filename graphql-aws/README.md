@@ -41,7 +41,7 @@ yarn dev
 2. Access the API:<br>
    The server will be running at `[http:0.0.](http://0.0.0.0:3000)`
 
-### Example GraphQL Query
+### Example GraphQL Query ⚛️
 
 ```gql
 query Hello {
