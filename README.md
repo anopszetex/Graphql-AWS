@@ -73,6 +73,8 @@ query Hello {
 ```bash
 ├── src/
 │   ├─ handler.js         # Main lambda function
+│   ├── mocks/
+│   │    ├── query.json   # Mock http request locally
 │   ├── graphql/
 │   │    ├── schema.js    # GraphQL schema definition
 │   │    └── resolvers.js # Resolvers for GraphQL queries
