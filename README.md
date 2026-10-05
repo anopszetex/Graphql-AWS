@@ -16,13 +16,17 @@ npm run dev
 
 The local API is exposed at `http://0.0.0.0:3000`.
 
-## Local invocation
+## Tests
 
 ```sh
 npm test
 ```
 
-This invokes the `graphql` function with `src/mocks/query.json`.
+The automated test executes a query against the assembled schema. To invoke the complete Lambda handler locally with `src/mocks/query.json`, run:
+
+```sh
+npm run test:local
+```
 
 ## Deploy
 

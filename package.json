@@ -13,7 +13,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "IS_LOCAL=true npx nodemon --exec sls offline start --host 0.0.0.0",
-    "test": "sls invoke local -f graphql --path src/mocks/query.json"
+    "test": "node --test",
+    "test:local": "sls invoke local -f graphql --path src/mocks/query.json",
+    "check": "node --check src/index.js && node --check src/graphql/index.js && node --check src/graphql/hero/resolvers.js"
   },
   "keywords": [],
   "author": "",
