@@ -1,5 +1,3 @@
-# Graphql-AWS
-
 <details>
 <summary><strong>🇧🇷 Ver documentação em Português (Brasil)</strong></summary>
 
@@ -46,6 +44,8 @@ npx sls deploy
 [MIT](LICENSE)
 
 </details>
+
+# Graphql-AWS
 
 ---
 
