@@ -1,88 +1,90 @@
 # Graphql-AWS
 
-Simple Template with Apollo Server **_(v4)_** and AWS Lambda
+Template de **GraphQL serverless** com **Apollo Server v4** e **AWS Lambda**, usando **Serverless Framework** e **LocalStack** para desenvolvimento local.
 
-## Prerequisites 👨‍💻
+O objetivo é demonstrar como empacotar uma API GraphQL como uma função Lambda, testar localmente e preparar para deploy na AWS.
 
-- [Node.js v18 or superior](https://nodejs.org/en/download/)
-- [Npm](https://docs.npmjs.com/cli/v8/commands/npm-install)
-- [Docker and Docker Compose](https://docs.docker.com/compose/install/)
-- [Create an AWS account](https://aws.amazon.com/free)
-- [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-- [Create an IAM user](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html#cli-configure-quickstart-creds-create)
-- [Configure the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html#cli-configure-quickstart-config)
+## Tecnologias
 
----
+- [Node.js](https://nodejs.org/) 18+
+- [Apollo Server v4](https://www.apollographql.com/docs/apollo-server/)
+- [AWS Lambda](https://aws.amazon.com/lambda/)
+- [Serverless Framework](https://www.serverless.com/)
+- [LocalStack](https://localstack.cloud/) — simulação local dos serviços AWS
+- [@as-integrations/aws-lambda](https://github.com/apollo-server-integrations/apollo-server-integration-aws-lambda)
 
-### Installation 🗃️
+## Estrutura
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/anopszetex/Graphql-AWS.git
+```text
+src/
+├── handler.js          # entrypoint da Lambda
+├── graphql/
+│   ├── hero/
+│   │   ├── index.js    # merge de schema e resolvers
+│   │   ├── resolvers.js
+│   │   └── schema.js
+│   └── index.js        # merge de todos os domínios
+└── mocks/
+    └── query.json      # payload de exemplo para teste local
 ```
 
-2. Install dependencies:
+## Pré-requisitos
 
-```bash
-npm ci --silent
+- Node.js 18+
+- Docker e Docker Compose
+- AWS CLI configurado (para deploy real)
+
+## Como rodar localmente
+
+### Instalar dependências
+
+```sh
+npm ci
 ```
 
----
+### Subir o LocalStack
 
-### Configuration of LocalStack 🐳
-
-This project uses [LocalStack](https://localstack.cloud/) to simulate AWS services locally. To run LocalStack, follow these steps:
-
-1. Ensure you have Docker and Docker Compose installed.
-2. Navigate to the root directory of the project and run:
-
-```bash
+```sh
 docker-compose up -d
 ```
 
----
+### Iniciar o servidor local
 
-### Running the Project 🚀
-
-1. Start the server:
-   > In the root directory, run:
-
-```bash
-yarn dev
+```sh
+npm run dev
 ```
 
-2. Access the API:<br>
-   The server will be running at `http://0.0.0.0:3000`
+A API estará disponível em `http://0.0.0.0:3000`.
 
----
+### Testar a Lambda localmente
 
-### Example GraphQL Query ⚛️
+```sh
+npm test
+```
 
-```gql
+Isso invoca a função `graphql` localmente com o payload em `src/mocks/query.json`.
+
+## Exemplo de query
+
+```graphql
 query Hello {
   getHero
   ping
 }
 ```
 
----
+## Deploy
 
-### Project Structure 🧱
+O projeto inclui um `serverless.yml` configurado para deploy na AWS. Antes de executar:
 
-```bash
-├── src/
-│   ├─ handler.js         # Main lambda function
-│   ├── mocks/
-│   │    ├── query.json   # Mock http request locally
-│   ├── graphql/
-│           ├── hero/               # Hero-related GraphQL files
-│           │     ├── index.js      # Merges schemas and resolvers for Hero
-│           │     ├── resolvers.js  # Resolvers for Hero queries/mutations
-│           │     └── schema.js     # GraphQL schema definition for Hero
-│           ├── index.js            # Merges all schemas and resolvers
-├── docker-compose.yml    # LocalStack configuration
-├── serverless.yml        # Serverless Framework configuration
-├── package.json          # Project dependencies and scripts
-└── README.md             # Project documentation
+1. Configure suas credenciais AWS.
+2. Ajuste o nome do service e a região no `serverless.yml`, se necessário.
+3. Execute:
+
+```sh
+npx sls deploy
 ```
+
+## Licença
+
+[MIT](LICENSE)
