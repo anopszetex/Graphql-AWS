@@ -8,7 +8,7 @@
     "graphql-tag": "^2.12.6"
   },
   "name": "@anopszetex/graphql-aws",
-  "description": "Template simples que demonstra como configurar um servidor GraphQL usando Apollo Server e implantá-lo em uma função AWS Lambda",
+  "description": "Serverless GraphQL template with Apollo Server v4 and AWS Lambda",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

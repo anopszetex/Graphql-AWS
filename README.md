@@ -1,5 +1,48 @@
 # Graphql-AWS
 
+A serverless GraphQL template built with Apollo Server v4, AWS Lambda, Serverless Framework, and LocalStack. It demonstrates schema composition, Lambda handler reuse across warm invocations, local execution, and AWS deployment configuration.
+
+## Requirements
+
+- Node.js 18+
+- Docker and Docker Compose
+- AWS credentials for a real deployment
+
+```sh
+npm ci
+docker-compose up -d
+npm run dev
+```
+
+The local API is exposed at `http://0.0.0.0:3000`.
+
+## Local invocation
+
+```sh
+npm test
+```
+
+This invokes the `graphql` function with `src/mocks/query.json`.
+
+## Deploy
+
+Review the service name, region, and credentials before running:
+
+```sh
+npx sls deploy
+```
+
+## License
+
+[MIT](LICENSE)
+
+---
+
+<details>
+<summary><strong>🇧🇷 Ver documentação em Português (Brasil)</strong></summary>
+
+# Graphql-AWS
+
 Template de **GraphQL serverless** com **Apollo Server v4** e **AWS Lambda**, usando **Serverless Framework** e **LocalStack** para desenvolvimento local.
 
 O objetivo é demonstrar como empacotar uma API GraphQL como uma função Lambda, testar localmente e preparar para deploy na AWS.
@@ -88,3 +131,5 @@ npx sls deploy
 ## Licença
 
 [MIT](LICENSE)
+
+</details>
