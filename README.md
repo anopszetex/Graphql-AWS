@@ -1,47 +1,5 @@
 # Graphql-AWS
 
-A serverless GraphQL template built with Apollo Server v4, AWS Lambda, Serverless Framework, and LocalStack. It demonstrates schema composition, Lambda handler reuse across warm invocations, local execution, and AWS deployment configuration.
-
-## Requirements
-
-- Node.js 18+
-- Docker and Docker Compose
-- AWS credentials for a real deployment
-
-```sh
-npm ci
-docker-compose up -d
-npm run dev
-```
-
-The local API is exposed at `http://0.0.0.0:3000`.
-
-## Tests
-
-```sh
-npm test
-```
-
-The automated test executes a query against the assembled schema. To invoke the complete Lambda handler locally with `src/mocks/query.json`, run:
-
-```sh
-npm run test:local
-```
-
-## Deploy
-
-Review the service name, region, and credentials before running:
-
-```sh
-npx sls deploy
-```
-
-## License
-
-[MIT](LICENSE)
-
----
-
 <details>
 <summary><strong>🇧🇷 Ver documentação em Português (Brasil)</strong></summary>
 
@@ -88,3 +46,45 @@ npx sls deploy
 [MIT](LICENSE)
 
 </details>
+
+---
+
+A serverless GraphQL template built with Apollo Server v4, AWS Lambda, Serverless Framework, and LocalStack. It demonstrates schema composition, Lambda handler reuse across warm invocations, local execution, and AWS deployment configuration.
+
+## Requirements
+
+- Node.js 18+
+- Docker and Docker Compose
+- AWS credentials for a real deployment
+
+```sh
+npm ci
+docker-compose up -d
+npm run dev
+```
+
+The local API is exposed at `http://0.0.0.0:3000`.
+
+## Tests
+
+```sh
+npm test
+```
+
+The automated test executes a query against the assembled schema. To invoke the complete Lambda handler locally with `src/mocks/query.json`, run:
+
+```sh
+npm run test:local
+```
+
+## Deploy
+
+Review the service name, region, and credentials before running:
+
+```sh
+npx sls deploy
+```
+
+## License
+
+[MIT](LICENSE)
