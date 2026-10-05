@@ -47,8 +47,6 @@ npx sls deploy
 
 # Graphql-AWS
 
----
-
 A serverless GraphQL template built with Apollo Server v4, AWS Lambda, Serverless Framework, and LocalStack. It demonstrates schema composition, Lambda handler reuse across warm invocations, local execution, and AWS deployment configuration.
 
 ## Requirements
